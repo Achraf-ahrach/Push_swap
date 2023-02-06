@@ -6,11 +6,32 @@
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 15:25:32 by aahrach           #+#    #+#             */
-/*   Updated: 2023/01/31 19:06:21 by aahrach          ###   ########.fr       */
+/*   Updated: 2023/02/07 00:19:56 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	ft_error_lst(t_lst *p, int k)
+{
+	t_lst	*s;
+
+	if (k == 1)
+		write (2, "max or min de int !\n", 20);
+	else if (k == 2)
+		write (2, "duplicate numbers !\n", 20);
+	else
+		write (2, "Error\n", 6);
+	if (!p)
+		exit (5);
+	while (p)
+	{
+		s = p;
+		p = p->next;
+		free(s);
+	}
+	exit (1);
+}
 
 int	ft_strlen(char *s)
 {
@@ -44,9 +65,6 @@ int	ft_atoi(char *str, t_lst *p)
 		i++;
 	}
 	if (nbr * x > 2147483647 || nbr * x < -2147483648)
-	{
-		write (1, "max de int !", 12);
-		ft_error_lst(p);
-	}
+		ft_error_lst(p, 1);
 	return (nbr * x);
 }

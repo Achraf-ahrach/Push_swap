@@ -6,7 +6,7 @@
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 18:37:52 by aahrach           #+#    #+#             */
-/*   Updated: 2023/02/05 20:12:11 by aahrach          ###   ########.fr       */
+/*   Updated: 2023/02/06 23:31:43 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	lstsize(t_lst **lst)
 {
 	int		len;
 	t_lst	*tmp;
-	
+
 	len = 0;
 	tmp = *lst;
 	while (tmp)

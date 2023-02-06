@@ -6,7 +6,7 @@
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 18:41:09 by aahrach           #+#    #+#             */
-/*   Updated: 2023/02/05 12:10:30 by aahrach          ###   ########.fr       */
+/*   Updated: 2023/02/06 20:30:51 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,25 @@ void	min_max(t_lst	*stack_a, int *min, int *max)
 void	three(t_lst **a)
 {
 	int	min;
-	int max;
+	int	max;
 
 	min_max(*a, &min, &max);
 	if ((*a)->content != min && (*a)->content != max)
 	{
 		(*a) = (*a)->next;
 		if ((*a)->content == min)
-			sa(a);
+			sa(a, 1);
 		else
-			rra(a);
+			rra(a, 1);
 	}
 	else if ((*a)->content == max)
 	{
 		(*a) = (*a)->next;
 		if ((*a)->content == min)
-			ra(a);
+			ra(a, 1);
 		else
-			rra(sa(a));
+			rra(sa(a, 1), 1);
 	}
 	else if ((*a)->content == min && (*a)->next->content == max)
-		ra(sa(a));
+		ra(sa(a, 1), 1);
 }

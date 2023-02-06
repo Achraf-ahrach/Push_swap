@@ -6,31 +6,11 @@
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:10:23 by aahrach           #+#    #+#             */
-/*   Updated: 2023/02/05 14:38:08 by aahrach          ###   ########.fr       */
+/*   Updated: 2023/02/06 20:31:28 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int acses(t_lst *stack_a)
-{
-	int	min = 0;
-
-	if(stack_a)
-	{
-		min = stack_a->content;
-		stack_a = stack_a->next;
-	}
-	while (stack_a)
-	{
-		
-		if (min > stack_a->content)
-			return (-1);
-		min = stack_a->content;
-		stack_a = stack_a->next;
-	}
-	return (0);
-}
 
 int	index_min(t_lst *stack_a, int min)
 {
@@ -76,17 +56,17 @@ void	five(t_lst **stack_a, t_lst **b)
 		if (index >= (5 / 2))
 		{
 			while ((*stack_a)->content != min)
-				rra(stack_a);
-			pb(b, stack_a);
+				rra(stack_a, 1);
+			pb(b, stack_a, 1);
 		}
 		else if (index < (5 / 2))
 		{
 			while ((*stack_a)->content != min)
-				ra(stack_a);
-			pb(b, stack_a);
+				ra(stack_a, 1);
+			pb(b, stack_a, 1);
 		}
 	}
 	three(stack_a);
 	while (*b)
-		pa(stack_a, b);
+		pa(stack_a, b, 1);
 }

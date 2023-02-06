@@ -1,16 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 17:47:18 by aahrach           #+#    #+#             */
-/*   Updated: 2023/02/07 00:14:07 by aahrach          ###   ########.fr       */
+/*   Created: 2023/02/06 18:50:05 by aahrach           #+#    #+#             */
+/*   Updated: 2023/02/07 00:19:46 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
+
+int	repeat_of_numbers(t_lst *p)
+{
+	t_lst	*s;
+
+	if (!p)
+		ft_error_lst(p, 0);
+	s = p->next;
+	while (p)
+	{
+		s = p->next;
+		while (s)
+		{
+			if (p->content == s->content)
+				return (-1);
+			s = s->next;
+		}
+		p = p->next;
+	}
+	return (0);
+}
 
 int	check(char **av)
 {
@@ -21,8 +42,8 @@ int	check(char **av)
 	while (av[i])
 	{
 		j = 0;
-		if ((av[i][j] == '-' && av[i][j + 1]) ||
-			(av[i][j] == '+' && av[i][j + 1]))
+		if ((av[i][j] == '-' && av[i][j + 1])
+			|| (av[i][j] == '+' && av[i][j + 1]))
 			j++;
 		while (av[i][j])
 		{
@@ -67,23 +88,21 @@ t_lst	*hoop(char **av)
 	return (p);
 }
 
-int	repeat_of_numbers(t_lst *p)
+int	acses(t_lst *stack_a)
 {
-	t_lst	*s;
+	int	min;
 
-	if (!p)
-		ft_error_lst(p, 0);
-	s = p->next;
-	while (p)
+	if (stack_a)
 	{
-		s = p->next;
-		while (s)
-		{
-			if (p->content == s->content)
-				return (-1);
-			s = s->next;
-		}
-		p = p->next;
+		min = stack_a->content;
+		stack_a = stack_a->next;
+	}
+	while (stack_a)
+	{
+		if (min > stack_a->content)
+			return (-1);
+		min = stack_a->content;
+		stack_a = stack_a->next;
 	}
 	return (0);
 }
@@ -103,6 +122,6 @@ int	main(int ac, char **av)
 	if (repeat_of_numbers(stack_a) == -1)
 		ft_error_lst(stack_a, 2);
 	else if (lstsize(&stack_a) == 0)
-		ft_error_lst(stack_a, 0);
-	push_swap(&stack_a);
+		ft_error_lst(stack_a, 2);
+	checker(&stack_a);
 }

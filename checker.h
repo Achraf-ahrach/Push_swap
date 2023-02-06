@@ -6,25 +6,21 @@
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:58:28 by aahrach           #+#    #+#             */
-/*   Updated: 2023/02/06 16:43:30 by aahrach          ###   ########.fr       */
+/*   Updated: 2023/02/07 00:07:31 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-
-typedef struct s_lst{
-	int content;
-	int	index;
-	struct s_lst *next;
-}	t_lst;
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include "push_swap.h"
 
 t_lst	*lstnew(int content);
-size_t	ft_strlen(char *s);
+void	checker(t_lst **stack_a);
+int		ft_strlen(char *s);
 int		check_line(char *str);
 char	*ft_substr(char *s, int start, int len, int x);
 t_lst	*lstlast(t_lst *lst);
@@ -38,8 +34,7 @@ char	*get_next_line(int fd);
 char	*ft_free(char *buf, char **p);
 char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strdup(char *s1);
 int		check_line(char *str);
-char	*ft_substr(char *str, int start, int len, int x);
-size_t	ft_strlen(char *s);
+void	ss(t_lst *stack_a, t_lst *stack_b);
+
 #endif
