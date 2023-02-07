@@ -6,7 +6,7 @@
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:52:38 by aahrach           #+#    #+#             */
-/*   Updated: 2023/02/07 15:39:59 by aahrach          ###   ########.fr       */
+/*   Updated: 2023/02/07 15:40:32 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	help(char *s, t_lst **stack_a, t_lst **stack_b)
 	else
 		error_exit();
 }
-
 
 void	checker(t_lst **stack_a)
 {
