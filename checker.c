@@ -6,7 +6,7 @@
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:52:38 by aahrach           #+#    #+#             */
-/*   Updated: 2023/02/07 15:40:32 by aahrach          ###   ########.fr       */
+/*   Updated: 2023/02/07 15:48:41 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,6 @@ void	rrr(t_lst **stack_a, t_lst **stack_b)
 	p->next = NULL;
 	lstadd_front(stack_b, new);
 }
-
-// void	ft_error_lst(t_lst *p)
-// {
-// 	t_lst	*s;
-
-// 	write (2, "Error\n", 6);
-// 	if (!p)
-// 		exit (5);
-// 	while (p)
-// 	{
-// 		s = p;
-// 		p = p->next;
-// 		free(s);
-// 	}
-// 	exit (1);
-// }
 
 void	error_exit(void)
 {
