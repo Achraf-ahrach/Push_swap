@@ -6,7 +6,7 @@
 #    By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 18:05:51 by aahrach           #+#    #+#              #
-#    Updated: 2023/02/06 18:57:37 by aahrach          ###   ########.fr        #
+#    Updated: 2023/02/10 11:30:19 by aahrach          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC_BONUS = checker.c ./get_next_line/get_next_line.c ./get_next_line/get_next_l
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 OBJ = $(SRC:.c=.o)
 
@@ -32,10 +32,10 @@ all : $(NAME)
 bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) : $(OBJ_BONUS)
-	$(CC) $(FLAGS) $(OBJ_BONUS) -o $(NAME_BONUS)
+	$(CC) $(CFLAGS) $(OBJ_BONUS) -o $(NAME_BONUS)
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 
 clean :

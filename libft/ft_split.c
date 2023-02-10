@@ -6,7 +6,7 @@
 /*   By: aahrach <aahrach@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 15:19:28 by aahrach           #+#    #+#             */
-/*   Updated: 2023/02/06 23:32:10 by aahrach          ###   ########.fr       */
+/*   Updated: 2023/02/10 11:27:39 by aahrach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_substr(char *s, unsigned int start, int len)
 {
-	int		i;
-	int		j;
-	char	*p;
+	int				i;
+	unsigned int	j;
+	char			*p;
 
 	i = 0;
 	if (!s)
